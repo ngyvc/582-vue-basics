@@ -27,4 +27,4 @@ let app = createApp({
       console.log("Action");
     },
   },
-}).mount("#app");
+});

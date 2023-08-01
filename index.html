@@ -1,34 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="js/main.js" defer></script>
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
-  <body>
-    <div id="app">
-      <h1>{{ message + name }}</h1>
-      <img v-bind:src="imageSrc" :alt="name" />
 
-      <p :class="av" v-if="availability">Available</p>
-      <p :class="nav" v-else>Not Available</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-      <p v-if="age < 18">Kids</p>
-      <p v-else-if="age > 17 && age < 65">Adults</p>
-      <p v-else>Seniors</p>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/components/Student.js"></script>
+  <script defer src="js/components/Component.js"></script>
+  <script defer src="js/mount.js"></script>
 
-      <ul class="students">
-        <li v-for="student in students" :key="student.id">
-          <span v-for="(prop, index) of student">
-            {{ index + " : " + prop }}
-          </span>
-        </li>
-      </ul>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
 
-      <div class="btn" v-on:click="action">CLICK ME!!</div>
-    </div>
-  </body>
+<body>
+  <div id="app">
+    <h1>{{ message + name }}</h1>
+    <img v-bind:src="imageSrc" :alt="name" />
+
+    <p :class="av" v-if="availability">Available</p>
+    <p :class="nav" v-else>Not Available</p>
+
+    <p v-if="age < 18">Kids</p>
+    <p v-else-if="age > 17 && age < 65">Adults</p>
+    <p v-else>Seniors</p>
+
+    <ul class="students">
+      <li v-for="student in students" :key="student.id">
+        <span v-for="(prop, index) of student">
+          {{ index + " : " + prop }}
+        </span>
+      </li>
+    </ul>
+
+    <div class="btn" v-on:click="action">CLICK ME!!</div>
+
+    <student v-for="student in students" :student="student"></student>
+
+    <component v-for="student in students" :given="student"></component>
+  </div>
+</body>
+
 </html>
