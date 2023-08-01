@@ -6,8 +6,29 @@
     <title>Document</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="js/main.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <div id="app">{{ message }}</div>
+    <div id="app">
+      <h1>{{ message + name }}</h1>
+      <img v-bind:src="imageSrc" :alt="name" />
+
+      <p :class="av" v-if="availability">Available</p>
+      <p :class="nav" v-else>Not Available</p>
+
+      <p v-if="age < 18">Kids</p>
+      <p v-else-if="age > 17 && age < 65">Adults</p>
+      <p v-else>Seniors</p>
+
+      <ul class="students">
+        <li v-for="student in students" :key="student.id">
+          <span v-for="(prop, index) of student">
+            {{ index + " : " + prop }}
+          </span>
+        </li>
+      </ul>
+
+      <div class="btn" v-on:click="action">CLICK ME!!</div>
+    </div>
   </body>
 </html>
