@@ -6,6 +6,11 @@ app.component("component", {
         <button @click="componentAction">Action</button>
     </div> 
     `,
+  data() {
+    return {
+      dataInsideComponent: "Data inside component",
+    };
+  },
   props: {
     given: {
       type: Object,
