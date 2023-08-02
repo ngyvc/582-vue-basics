@@ -43,7 +43,7 @@
 
     <student v-for="student in students" :student="student"></student>
 
-    <component v-for="student in students" :given="student"></component>
+    <component v-for="student in students" :given="student" @action-from-component="doActionInParent"></component>
   </div>
 </body>
 

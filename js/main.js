@@ -26,5 +26,8 @@ let app = createApp({
     action() {
       console.log("Action");
     },
+    doActionInParent() {
+      console.log("Action in parent");
+    },
   },
 });
