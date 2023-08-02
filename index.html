@@ -8,6 +8,7 @@
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
   <script defer src="js/main.js"></script>
+  <script defer src="js/components/TeacherProfile.js"></script>
   <script defer src="js/components/Student.js"></script>
   <script defer src="js/components/Component.js"></script>
   <script defer src="js/mount.js"></script>
@@ -36,6 +37,9 @@
     </ul>
 
     <div class="btn" v-on:click="action">CLICK ME!!</div>
+
+    <teacher-profile :name="name" :age="age" :availability="availability" :profile="imageSrc"></teacher-profile>
+    <teacher-profile :name="name" :age="age" :availability="availability"></teacher-profile>
 
     <student v-for="student in students" :student="student"></student>
 
