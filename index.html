@@ -18,25 +18,27 @@
 
 <body>
   <div id="app">
-    <h1>{{ message + name }}</h1>
-    <img v-bind:src="imageSrc" :alt="name" />
+    <div>
+      <h1>{{ message + name }}</h1>
+      <img v-bind:src="imageSrc" :alt="name" />
 
-    <p :class="av" v-if="availability">Available</p>
-    <p :class="nav" v-else>Not Available</p>
+      <p :class="av" v-if="availability">Available</p>
+      <p :class="nav" v-else>Not Available</p>
 
-    <p v-if="age < 18">Kids</p>
-    <p v-else-if="age > 17 && age < 65">Adults</p>
-    <p v-else>Seniors</p>
+      <p v-if="age < 18">Kids</p>
+      <p v-else-if="age > 17 && age < 65">Adults</p>
+      <p v-else>Seniors</p>
 
-    <ul class="students">
-      <li v-for="student in students" :key="student.id">
-        <span v-for="(prop, index) of student">
-          {{ index + " : " + prop }}
-        </span>
-      </li>
-    </ul>
+      <ul class="students">
+        <li v-for="student in students" :key="student.id">
+          <span v-for="(prop, index) of student">
+            {{ index + " : " + prop }}
+          </span>
+        </li>
+      </ul>
 
-    <div class="btn" v-on:click="action">CLICK ME!!</div>
+      <div class="btn" v-on:click="action">CLICK ME!!</div>
+    </div>
 
     <teacher-profile :name="name" :age="age" :availability="availability" :profile="imageSrc"></teacher-profile>
     <teacher-profile :name="name" :age="age" :availability="availability"></teacher-profile>
