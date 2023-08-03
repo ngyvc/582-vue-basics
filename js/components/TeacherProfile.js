@@ -1,7 +1,8 @@
 app.component("teacher-profile", {
   template: /*html*/ `
     <div>
-        <h2>{{name}}</h2>
+        <h2>Teacher Profile Component</h2>
+        <p>{{name}}</p>
         <p>{{age}} - {{availability}}</p>
 
         <img v-if="profile" :src="profile" :alt="name" />
